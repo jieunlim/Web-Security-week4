@@ -7,8 +7,8 @@ ob_start();
 // Enable sessions
 // TODO add configurations
 session_start([
-  'use_only_cookies' => 1,
   'cookie_lifetime' => 60*60*24,//expire after one day
+  'use_only_cookies' => 1,
   'cookie_httponly'=>1
 ]);
 

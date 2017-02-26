@@ -15,21 +15,23 @@ if(is_post_request()) {
 
 
   if(!csrf_token_is_valid()){
-    echo "Error here: invalid request";
+    echo "Error: invalid request";
     exit;
   }
 
-  if(!csrf_token_is_recent()){
-    echo "Error: token is not recent";
-  }
   if(!request_is_same_domain()){
     echo "Error:request is not the same domain";
     exit;
   }
 
+  if(!csrf_token_is_recent()){
+    echo "Error:";
+    exit;
+  }
+
   // Confirm that values are present before accessing them.
-  if(isset($_POST['username'])) { $username = h($_POST['username']); }
-  if(isset($_POST['password'])) { $password = h($_POST['password']); }
+  if(isset($_POST['username'])) { $username = $_POST['username']; }
+  if(isset($_POST['password'])) { $password = $_POST['password']; }
 
   // Validations
   if (is_blank($username)) {

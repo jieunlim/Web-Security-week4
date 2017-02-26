@@ -6,17 +6,17 @@ require_once('../../../private/initialize.php');
 if(!isset($_GET['id'])) {
   redirect_to('../index.php');
 }
-$id = $_GET['id'];
+$id = h($_GET['id']);
 $territory_result = find_territory_by_id($id);
 // No loop, only one result
 $territory = db_fetch_assoc($territory_result);
 
-$state_id = $territory['state_id'];
-$state_result = find_territory_by_id($state_id);
+$state_id = h($territory['state_id']);
+$state_result = find_state_name_by_id($territory['state_id']);
 $state = db_fetch_assoc($state_result);
 ?>
 
-<?php $page_title = 'Staff: Territory of ' . $territory['name']; ?>
+<?php $page_title = 'Staff: Territory of ' . h($territory['name']); ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="main-content">
