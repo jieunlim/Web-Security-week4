@@ -77,17 +77,17 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
  - After adding territory, when show terriroty with Back to State menu, the territory has different state name. 
-    I changed $state_result = find_territory_by_id($state_id);
-    to        $state_result = find_state_name_by_id($territory['state_id']);
-    And added function to query_function.php
- 
-    function find_state_name_by_id($id=0) {
-     global $db;
-     $sql = "SELECT name FROM states ";
-     $sql .= "WHERE id='" . db_escape($db, $id) . "';";
-     $state_result = db_query($db, $sql);
-     return $state_result;
-     }
+  * I changed $state_result = find_territory_by_id($state_id);
+  * to        $state_result = find_state_name_by_id($territory['state_id']);
+  * And added function to query_function.php
+  * 
+  * function find_state_name_by_id($id=0) {
+  * global $db;
+  * $sql = "SELECT name FROM states ";
+  * $sql .= "WHERE id='" . db_escape($db, $id) . "';";
+  * $state_result = db_query($db, $sql);
+  * return $state_result;
+  *  }
 
 ## License
 
