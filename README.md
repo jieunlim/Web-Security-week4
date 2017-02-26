@@ -80,7 +80,7 @@ Describe any challenges encountered while building the app.
   * I changed $state_result = find_territory_by_id($state_id);
   * to        $state_result = find_state_name_by_id($territory['state_id']);
   * And added function to query_function.php
-  * 
+   
   * function find_state_name_by_id($id=0) {
   * global $db;
   * $sql = "SELECT name FROM states ";
