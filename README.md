@@ -82,12 +82,12 @@ Describe any challenges encountered while building the app.
   * And added function to query_function.php
    
   * function find_state_name_by_id($id=0) {
-  * global $db;
-  * $sql = "SELECT name FROM states ";
-  * $sql .= "WHERE id='" . db_escape($db, $id) . "';";
-  * $state_result = db_query($db, $sql);
-  * return $state_result;
-  *  }
+  \ global $db;
+  \ $sql = "SELECT name FROM states ";
+  \ $sql .= "WHERE id='" . db_escape($db, $id) . "';";
+  \ $state_result = db_query($db, $sql);
+  \ return $state_result;
+  \  }
 
 ## License
 
