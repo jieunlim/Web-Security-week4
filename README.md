@@ -76,10 +76,10 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-- Bonus Objective 1:"Prefer whitelisting over blacklisting" is not being followed in this application.If developer forgets to add blacklist (require_login()), any people can access to the application. Since whitelisting is more secure approach than blacklisting, making whitelisting would be better approach.
+- Bonus Objective 1:"Prefer whitelisting over blacklisting" is not being followed in this application. If developer forgets to add blacklist (require_login()), any people can access to the application. Since whitelisting is more secure approach than blacklisting, making whitelisting would be better approach.
 
 
- - After adding territory, when show terriroty with Back to State menu, the territory has different state name. 
+- After adding territory, when show terriroty with Back to State menu, the territory has different state name. 
   * I changed $state_result = find_territory_by_id($state_id);
   * to        $state_result = find_state_name_by_id($territory['state_id']);
   * And added function to query_function.php
