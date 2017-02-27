@@ -13,11 +13,11 @@ $errors = array();
 
 if(is_post_request()) {
   if(!csrf_token_is_valid()){
-    echo "Error:invalid request";
+    echo "Error: invalid request";
     exit;
   }
   if(!request_is_same_domain()){
-    echo "Error:request is not the same domain";
+    echo "Error: request is not the same domain";
     exit;
   }
   // Confirm that values are present before accessing them.

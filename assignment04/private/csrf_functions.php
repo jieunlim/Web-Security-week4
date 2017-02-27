@@ -24,9 +24,9 @@
 
   // Returns true if form token matches session token, false if not.
   function csrf_token_is_valid(){
-    if(!isset($_POST['csrf_token'])) { echo 'hellooo'; return false; }
+    if(!isset($_POST['csrf_token'])) { return false; }
     if(!isset($_SESSION['csrf_token'])) { return false; }
-    //if(!csrf_token_is_recent()){echo hello; return false;}
+    if(!csrf_token_is_recent()){echo 'token_error'; return false;}
     return ($_POST['csrf_token'] === $_SESSION['csrf_token']);
   }
 
@@ -35,7 +35,6 @@
   function csrf_token_is_recent() {
     // TODO add code to determine if csrf token is recent
     $recent_limit = 60 *10; // Bonus3. 10 minutes
-
     return (($_SESSION['csrf_token_time'] + $recent_limit) >= time()); //set last login and limit is larger then current time
     }
 
